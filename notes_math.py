@@ -59,6 +59,16 @@ def avg_sd(lst):
     print('upper : lower error = ', avg+sd, ':', avg-sd)
 
 
+# decimal to base 2, 8, 16
+def base10(num10):
+    bin_n = bin(num10)
+    oct_n = oct(num10)
+    hex_n = hex(num10)
+    print(int(bin_n, 2), '(binary) = ', bin_n)
+    print(int(oct_n, 8), '(octal) = ', oct_n)
+    print(int(hex_n, 16), '(hexadecimal) = ', hex_n)
+
+
 # phasor: euler's formula e^(i*theta) = cos(theta) + i*sin(theta)
 def phasor(a, t):
     global r
@@ -84,5 +94,7 @@ mat_lin(lin_a, lin_b)
 
 l1 = [520, 512, 515, 522]
 avg_sd(l1)
+
+base10(79)
 
 phasor(14.54, 9.90)
