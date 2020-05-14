@@ -105,6 +105,8 @@ void dec_oct()
 //	scanf("%d", &n);
 	n = 210;
 	
+//	printf("\nOctal Number: %o", n);
+
 	for(i=0; n>0; i++)
 	{
 		o[i] = n%8;
