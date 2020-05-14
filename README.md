@@ -5,12 +5,16 @@ vector magnitude and unit vector;
 dot and cross product;
 solve linear equation by matrix;
 average and standard deviation;
+bsae 10 to base 2, 8, 16;
 euler's formula
 
 math_convert:
 decimal to binary;
 decimal to octal;
-decimal to hexadecimal
+decimal to hexadecimal;
+binary to decimal;
+octal to decimal;
+hexadecimal to decimal
 
 math_1:
 solve equation 4^x + 6^x = 9^x
