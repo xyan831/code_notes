@@ -1,4 +1,11 @@
-# python notes
+# c
+start:
+maximum and minimum;
+decimal to binary;
+decimal to octal;
+decimal to hexadecimal
+
+# python
 notes_math:
 quadratic equation;
 vector magnitude and unit vector;
