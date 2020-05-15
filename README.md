@@ -21,7 +21,9 @@ decimal to octal;
 decimal to hexadecimal;
 binary to decimal;
 octal to decimal;
-hexadecimal to decimal
+hexadecimal to decimal;
+decimal to base 2, 8, 16;
+base 2, 8, 16 to decimal
 
 math_1:
 solve equation 4^x + 6^x = 9^x
