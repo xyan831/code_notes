@@ -26,7 +26,7 @@ def nc10_8(num10):
 
 # decimal to hexadecimal
 def nc10_16(num10):
-    hexd = {'10': 'a', '11': 'b', '12': 'c', '13': 'd', '14': 'e', '15': 'f'}
+    hexd = {'10': 'A', '11': 'B', '12': 'C', '13': 'D', '14': 'E', '15': 'F'}
     num16 = []
     while num10 / 16 != 0:
         num16.append(str(num10 % 16))
@@ -66,7 +66,7 @@ def nc8_10(num8):
 
 # hexadecimal to decimal
 def nc16_10(num16):
-    hexd = {'10': 'a', '11': 'b', '12': 'c', '13': 'd', '14': 'e', '15': 'f'}
+    hexd = {'10': 'A', '11': 'B', '12': 'C', '13': 'D', '14': 'E', '15': 'F'}
     lenn = [item for item in str(num16)]
     lenn.reverse()
     lenn2 = []
@@ -81,6 +81,38 @@ def nc16_10(num16):
     print('decimal = ', ans)
 
 
+# decimal to base 2, 8, 16
+def dec_convert(num, base):
+    hexd = {'10': 'A', '11': 'B', '12': 'C', '13': 'D', '14': 'E', '15': 'F'}
+    con = []
+    while num/base != 0:
+        con.append(str(num % base))
+        num = num // base
+    con.reverse()
+    if base == 16:
+        for item in hexd:
+            con = [hexd[item] if x == item else x for x in con]
+    ans = ''.join(con)
+    print('base', base, 'number = ', ans)
+
+
+# base 2, 8, 16 to decimal
+def boh_convert(num, base):
+    hexd = {'10': 'A', '11': 'B', '12': 'C', '13': 'D', '14': 'E', '15': 'F'}
+    lenn = [item for item in str(num)]
+    lenn.reverse()
+    con = []
+    if base == 16:
+        for item in hexd:
+            lenn = [item if x == hexd[item] else x for x in lenn]
+    count = 0
+    for i in lenn:
+        con.append(int(i) * (base ** count))
+        count += 1
+    ans = sum(con)
+    print('decimal = ', ans)
+
+
 # calculate
 nc10_2(13)
 nc10_8(210)
@@ -88,4 +120,12 @@ nc10_16(501)
 
 nc2_10(1101)
 nc8_10(322)
-nc16_10('1f5')
+nc16_10('1F5')
+
+dec_convert(13, 2)
+dec_convert(210, 8)
+dec_convert(501, 16)
+
+boh_convert(1101, 2)
+boh_convert(322, 8)
+boh_convert('1F5', 16)
