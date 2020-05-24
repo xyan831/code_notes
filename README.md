@@ -1,9 +1,10 @@
 # c
-start:
+start(main):
 maximum and minimum;
-decimal to binary;
-decimal to octal;
-decimal to hexadecimal
+find multiple of number within range
+
+basecon:
+decimal to base 2, 8, 16
 
 # python
 notes_math:
