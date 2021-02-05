@@ -13,7 +13,7 @@ vector magnitude and unit vector;
 dot and cross product;
 solve linear equation by matrix;
 average and standard deviation;
-bsae 10 to base 2, 8, 16;
+base 10 to base 2, 8, 16;
 euler's formula
 
 math_convert:
