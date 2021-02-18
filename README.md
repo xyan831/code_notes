@@ -1,10 +1,14 @@
 # c
 start(main):
-maximum and minimum;
-find multiple of number within range
 
 basecon:
 decimal to base 2, 8, 16
+
+arraysort:
+maximum and minimum;
+find multiple of number within range;
+generate random number array;
+sort random number array in ascending order
 
 # python
 notes_math:
