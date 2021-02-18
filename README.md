@@ -20,6 +20,10 @@ average and standard deviation;
 base 10 to base 2, 8, 16;
 euler's formula
 
+graph:
+graph;
+squarewave
+
 math_convert:
 decimal to binary;
 decimal to octal;
