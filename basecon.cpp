@@ -7,10 +7,9 @@ void dec_xxx(int n)
 	printf("\nHexadecimal Number for %d = %X", n, n);
 }
 
-void dec_convert(int n, int r)
+void dec_convert(int n, int r, char *convert)
 {
 	int i=1, j, temp;
-	char hexadecimalNumber[100];
 	
 	printf("\nBase %d Number for %d = ", r, n);
 	
@@ -28,12 +27,12 @@ void dec_convert(int n, int r)
 			temp = temp + 55;
 		}
 		
-		hexadecimalNumber[i++]= temp;
+		convert[i++] = temp;
 		n = n/r;
 	}
 	
 	for (j=i-1; j>0; j--)
 	{
-		printf("%c",hexadecimalNumber[j]);
+		printf("%c",convert[j]);
 	}
 }
