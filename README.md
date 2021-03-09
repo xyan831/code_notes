@@ -1,4 +1,7 @@
 # c
+bstnotes(main):
+binary search tree
+
 start(main):
 
 basecon:
