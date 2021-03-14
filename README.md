@@ -13,6 +13,9 @@ find multiple of number within range;
 generate random number array;
 sort random number array in ascending order
 
+binarytree:
+binary search tree without main
+
 # python
 notes_math:
 quadratic equation;
