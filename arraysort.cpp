@@ -15,11 +15,14 @@ void minmax(int a[], int len, int *min, int *max)
 	scanf("%d", &a[2]);
 */
 	*min = *max = a[0];
-	for (i=1; i<len; i++) {
-		if (a[i] < *min) {
+	for (i=1; i<len; i++)
+	{
+		if (a[i] < *min)
+		{
 			*min = a[i];
 		}
-		if (a[i] > *max) {
+		if (a[i] > *max)
+		{
 			*max = a[i];
 		}
 	}
@@ -39,7 +42,7 @@ void multiple(int fac, int start, int end)
 	}
 }
 
-void randarray(int size, int min, int max, int rarray[])
+void randarray(int min, int max, int rarray[], int size)
 {
 	int i;
 	time_t t;
@@ -56,11 +59,13 @@ void randarray(int size, int min, int max, int rarray[])
 	{
 		printf("%d\t", rarray[i]);
 	}
+	printf("\n");
 }
 
-void sortarray(int size, int rarray[], int sarray[])
+void sortarray(int rarray[], int sarray[], int size)
 {
 	int i, j, a;
+	//int size = sizeof(rarray)/sizeof(int)
 	for (i=0; i<size; i++)
 	{
 		sarray[i] = rarray[i];
@@ -82,4 +87,5 @@ void sortarray(int size, int rarray[], int sarray[])
 	{
 		printf("%d\t", sarray[i]);
 	}
+	printf("\n");
 }

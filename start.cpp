@@ -1,8 +1,9 @@
-#include <stdio.h>      /* printf, scanf, puts, NULL */
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
-#include "basecon.h"	/* dec_xxx, dec_convert */
-#include "arraysort.h"	/* minmax, multiple, randarray, sortarray */
+#include <stdio.h>			/* printf, scanf, puts, NULL */
+#include <stdlib.h>			/* srand, rand */
+#include <time.h>			/* time */
+#include "basecon.h"		/* dec_xxx, dec_convert */
+#include "arraysort.h"		/* minmax, multiple, randarray, sortarray */
+#include "binarytree.h"		/* binarytree */
 
 /*
 #pragma pack(1)
@@ -20,14 +21,15 @@ typedef union {
 
 int main(void)
 {
-	int n;
-	char convert1[100], convert2[100], convert3[100];
-	int a[] = {2, 46, 5, 8, 235, 75, 3, 8, 22, 4};
-	int min, max;
-	int rarray[10], sarray[10];
+//	int n;
+//	char convert1[100], convert2[100], convert3[100];
+//	int a[] = {2, 46, 5, 8, 235, 75, 3, 8, 22, 4};
+//	int min, max;
+	int rarray[10],	sarray[10];
+	struct node* root = NULL;
 	
-/*
-	_W w;
+
+/*	_W w;
 	printf("\n%d bytes: a", sizeof(w.a));
 	printf("\n%d bytes: m", sizeof(w.b.m));
 	printf("\n%d bytes: n", sizeof(w.b.n));
@@ -38,7 +40,7 @@ int main(void)
 	w.b.m = 0;
 	w.b.n = 0;
 	printf("\na = %d", w.a);
-*/
+
 
 	// clear command prompt
 //	system("cls");
@@ -68,11 +70,13 @@ int main(void)
 
 	// find multiple of number from range
 	multiple(9, 1, 100);
-
+*/
 	// create random number array
-	randarray(10, 0, 50, &rarray[0]);
+	randarray(0, 50, rarray, sizeof(rarray)/sizeof(rarray[0]));
 	// sort the random number array in ascending order
-	sortarray(10, &rarray[0], &sarray[0]);
+	sortarray(rarray, sarray, sizeof(rarray)/sizeof(rarray[0]));
+	// binary tree function
+	binaryarray(root, rarray, sizeof(rarray)/sizeof(rarray[0]));
 
 	return 0;
 }
