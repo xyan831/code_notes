@@ -26,7 +26,6 @@ int main(void)
 //	int a[] = {2, 46, 5, 8, 235, 75, 3, 8, 22, 4};
 //	int min, max;
 	int rarray[10],	sarray[10];
-	struct node* root = NULL;
 	
 
 /*	_W w;
@@ -76,7 +75,7 @@ int main(void)
 	// sort the random number array in ascending order
 	sortarray(rarray, sarray, sizeof(rarray)/sizeof(rarray[0]));
 	// binary tree function
-	binaryarray(root, rarray, sizeof(rarray)/sizeof(rarray[0]));
+	binaryarray(rarray, sizeof(rarray)/sizeof(rarray[0]));
 
 	return 0;
 }
