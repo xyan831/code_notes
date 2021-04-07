@@ -3,6 +3,7 @@ bstnotes(main):
 binary search tree
 
 start(main):
+include other .cpp files
 
 basecon:
 decimal to base 2, 8, 16
@@ -18,6 +19,7 @@ binary search tree without main
 
 # python
 notes_math:
+interpolation;
 quadratic equation;
 vector magnitude and unit vector;
 dot and cross product;
@@ -26,23 +28,16 @@ average and standard deviation;
 base 10 to base 2, 8, 16;
 euler's formula
 
-graph:
+math_graph:
 graph;
 squarewave
 
 math_convert:
-decimal to binary;
-decimal to octal;
-decimal to hexadecimal;
-binary to decimal;
-octal to decimal;
-hexadecimal to decimal;
-decimal to base 2, 8, 16;
+decimal to base 2, 8, 16 (answer in string format);
 base 2, 8, 16 to decimal
 
-math_1:
+math1_binarysolve:
 solve equation 4^x + 6^x = 9^x
 
-math_2:
-maximum and minimum;
-find multiples of a number from given range
+math2_stressgraph:
+graph stress transformation with given normal stress (sx, sy) and shear stress (txy)
