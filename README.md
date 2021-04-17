@@ -30,7 +30,8 @@ euler's formula
 
 math_graph:
 graph;
-squarewave
+squarewave;
+bode plot
 
 math_convert:
 decimal to base 2, 8, 16 (answer in string format);
