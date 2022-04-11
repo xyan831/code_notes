@@ -40,5 +40,8 @@ base 2, 8, 16 to decimal
 math1_binarysolve:
 solve equation 4^x + 6^x = 9^x
 
-math2_stressgraph:
+MEEN489_stressgraph:
 graph stress transformation with given normal stress (sx, sy) and shear stress (txy)
+
+MEEN471_PlyLaminate:
+find ply stresses in a laminate
