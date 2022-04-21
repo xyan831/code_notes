@@ -15,7 +15,7 @@ c = [45, -45] + [0]*4
 config = c + [90] + list(reversed(c))
 N = len(config)
 pt = 0.005
-
+# functions
 def T1(th): # stress local to global
     T1 = np.array([[cos(th)**2, sin(th)**2, 2*sin(th)*cos(th)],
                    [sin(th)**2, cos(th)**2, -2*sin(th)*cos(th)],
@@ -41,7 +41,6 @@ def make(Q1, x, y, N, config, pt):
         zk1 = pt*(i-1 - N/2)
         a += Q[x][y]*(zk-zk1)
     return a
-
 Q1 = Q1(E11, E22, G12, v12, v21)
 A = np.array([[make(Q1, 0, 0, N, config, pt), make(Q1, 0, 1, N, config, pt), 0],
               [make(Q1, 1, 0, N, config, pt), make(Q1, 1, 1, N, config, pt), 0],

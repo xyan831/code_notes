@@ -11,16 +11,16 @@ G12 = 1.04*M
 v12 = 0.28
 v21 = 0.016
 # laminate config
-c = [0]*4 + [45] + [0]*3 + [-45, 90]
+c = [45, 90, -45, 45, -45, 45, -45]
 config = c + list(reversed(c))
 N = len(config)
 pt = 0.005
 ply = 1
 z = pt*(ply-0.5 - N/2)
-Nxx = 1000  # normal stress resultant
+Nxx = 0  # normal stress resultant
 Nyy = 0
-Nxy = 0     # shear stress resultant 
-Mxx = 10     # bending stress resultant
+Nxy = 6743.17     # shear stress resultant 
+Mxx = 0     # bending stress resultant
 Myy = 0
 Mxy = 0     # twisting stress resultant
 # strengths
@@ -81,7 +81,7 @@ def make(Q1, x, y, N, config, pt, let):
 # matrix
 Q1 = Q1(E11, E22, G12, v12, v21)
 
-def matA(Q1, N, bal):
+def matA(Q1, config, N, bal):
     A = np.array([[make(Q1, 0, 0, N, config, pt, 'A'), make(Q1, 0, 1, N, config, pt, 'A'), make(Q1, 0, 2, N, config, pt, 'A')],
                   [make(Q1, 1, 0, N, config, pt, 'A'), make(Q1, 1, 1, N, config, pt, 'A'), make(Q1, 1, 2, N, config, pt, 'A')],
                   [make(Q1, 2, 0, N, config, pt, 'A'), make(Q1, 2, 1, N, config, pt, 'A'), make(Q1, 2, 2, N, config, pt, 'A')]])
@@ -93,7 +93,7 @@ def matA(Q1, N, bal):
     else:
         return A
 
-def matB(Q1, N, sym):
+def matB(Q1, config, N, sym):
     B = np.array([[make(Q1, 0, 0, N, config, pt, 'B'), make(Q1, 0, 1, N, config, pt, 'B'), make(Q1, 0, 2, N, config, pt, 'B')],
                   [make(Q1, 1, 0, N, config, pt, 'B'), make(Q1, 1, 1, N, config, pt, 'B'), make(Q1, 1, 2, N, config, pt, 'B')],
                   [make(Q1, 2, 0, N, config, pt, 'B'), make(Q1, 2, 1, N, config, pt, 'B'), make(Q1, 2, 2, N, config, pt, 'B')]])
@@ -105,8 +105,8 @@ def matB(Q1, N, sym):
     else:
         return B
 
-A = matA(Q1, N, True)
-B = matB(Q1, N, True)
+A = matA(Q1, config, N, True)
+B = matB(Q1, config, N, True)
 
 D = np.array([[make(Q1, 0, 0, N, config, pt, 'D'), make(Q1, 0, 1, N, config, pt, 'D'), make(Q1, 0, 2, N, config, pt, 'D')],
               [make(Q1, 1, 0, N, config, pt, 'D'), make(Q1, 1, 1, N, config, pt, 'D'), make(Q1, 1, 2, N, config, pt, 'D')],
