@@ -2,26 +2,45 @@
 # xyan831
 
 from math import sin, cos
-from pylab import pi, logspace, polymul
-from scipy import signal
-import matplotlib.pyplot as plt
+
 import numpy as np
+import matplotlib.pyplot as plt
+
+from scipy import signal
+from pylab import pi, logspace, polymul
 
 def graph():
+	# set up arrays
 	x1 = np.linspace(-6, 6, 150)
 	y1 = np.zeros(len(x1), dtype=float)
+	y2 = np.zeros(len(x1), dtype=float)
+	y3 = np.zeros(len(x1), dtype=float)
+	y4 = np.zeros(len(x1), dtype=float)
+	# set up equations
 	for i in range(len(x1)):
-		y1[i] = x1[i]*sin(x1[i]) + 3*cos(x1[i]) - x1[i]
-	    
+		y1[i] = abs(x1[i])
+		y2[i] = x1[i]**2
+		y3[i] = sin(x1[i])
+		y4[i] = cos(x1[i])
+	# plot equations
 	ax = plt.subplot(1, 1, 1)
-	line1 = ax.plot(x1, y1, 'k-')
-	
+	line1, = ax.plot(x1, y1, 'k-')
+	line2, = ax.plot(x1, y2, 'r:')
+	line3, = ax.plot(x1, y3, 'b--')
+	line4, = ax.plot(x1, y4, 'g-.')
+	# vertical line
+	plt.axvline(x=0, color='y')
+	# set axis limits
+	plt.xlim([-7, 7])
+	plt.ylim([-3, 3])
+	# label title and axis
 	plt.title('Graph')
 	plt.xlabel('x', fontsize=18)
 	plt.ylabel('y(x)', fontsize=18)
-	plt.legend([line1],
-			['Legend'], fontsize=12,
-			bbox_to_anchor=(1.1, 0.65), loc=2, borderaxespad=0.0)
+	plt.legend([line1, line2, line3, line4],
+			['y1', 'y2', 'y3', 'y4'], fontsize=12,
+			bbox_to_anchor=(1.02, 0.65), loc=2, borderaxespad=0.0)
+	# add grid and show plot
 	plt.grid()
 	plt.show()
 
