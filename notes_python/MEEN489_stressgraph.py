@@ -1,7 +1,7 @@
-# MEEN 489-507 In Class Work
+# MEEN 489 stress graph
 # Xiaochen Yan UIN: 327002462
-# 4/6/2021
 
+# import module
 from math import radians, sin, cos
 import matplotlib.pyplot as plt
 import numpy as np
@@ -33,10 +33,10 @@ line3, = ax.plot(theta, ntxy, 'k-')
 
 # axis titles and legend
 plt.title('MEEN 489-507 In Class Work 4/6/2021')
-plt.xlabel('Degrees', fontsize=18)
-plt.ylabel('Stress [MPa]', fontsize=18)
+plt.xlabel('Degrees')
+plt.ylabel('Stress [MPa]')
 plt.legend([line1, line2, line3],
 		   ['Sx', 'Sy', 'Txy'], fontsize=12,
-		   bbox_to_anchor=(1.1, 0.65), loc=2, borderaxespad=0.0)
+		   bbox_to_anchor=(1.02, 0.65), loc=2, borderaxespad=0.0)
 plt.grid()
 plt.show()

@@ -1,3 +1,7 @@
+# MEEN 471 flange laminate
+# Xiaochen Yan UIN: 327002462
+
+# import module
 from math import radians, sin, cos
 import numpy as np
 # index
