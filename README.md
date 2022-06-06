@@ -28,6 +28,11 @@ average and standard deviation;
 base 10 to base 2, 8, 16;
 euler's formula
 
+notes_text:
+get files based on file type;
+find text;
+delete characters
+
 math_graph:
 graph;
 squarewave;
