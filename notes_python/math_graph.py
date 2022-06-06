@@ -1,11 +1,10 @@
 # graph
 # xyan831
 
+# import module
 from math import sin, cos
-
 import numpy as np
 import matplotlib.pyplot as plt
-
 from scipy import signal
 from pylab import pi, logspace, polymul
 
@@ -47,15 +46,12 @@ def graph():
 def squarewave():
 	# Sampling rate 1000 hz / second
 	t = np.linspace(0, 12, 1000, endpoint=True)
-	
 	# Plot the square wave signal
 	plt.plot(t, signal.square(2*np.pi*(1/4)*t))
-	
 	plt.title('Square wave')
 	plt.xlabel('Time')
 	plt.ylabel('Amplitude')
 	plt.grid(True, which='both')
-	
 	# Provide x axis and line color
 	plt.axhline(y=0, color='k')
 	# Set the max and min values for y axis
@@ -69,13 +65,13 @@ def bodeplot():
 	numerator = [7.5]
 	numerator = polymul(numerator, [0.2, 1])
 	numerator = polymul(numerator, [1, 1])
-	
+	# set up
 	system = signal.lti(numerator, denominator)
 	domain = logspace(-3, 3)
 	omega, magnitude, phase = signal.bode(system, 2*pi*domain)
 	# break frequencies
 	break_frequencies = [1, 5, 10]
-	
+	# plot
 	_, plot = plt.subplots(2, sharex=True)
 	plot[0].semilogx(omega, magnitude)
 	plot[0].vlines(break_frequencies, ymin=min(magnitude), ymax=max(magnitude), colors='C1')

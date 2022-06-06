@@ -1,6 +1,7 @@
 # math1: binary solve equation
 # xyan831
 
+# import module
 from math import sqrt, log
 
 # 4^x + 6^x = 9^x
