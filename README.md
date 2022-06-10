@@ -18,6 +18,11 @@ binarytree:
 binary search tree without main
 
 # python
+gacha:
+random pull from different weighted lists;
+gacha using csv pool;
+write csv pool for gacha
+
 notes_math:
 interpolation;
 quadratic equation;
@@ -44,9 +49,6 @@ base 2, 8, 16 to decimal
 
 math1_binarysolve:
 solve equation 4^x + 6^x = 9^x
-
-gacha:
-gacha simulator, random pull from different weighted lists
 
 ISEN302:
 engineering economics
