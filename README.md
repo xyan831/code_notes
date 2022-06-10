@@ -50,6 +50,10 @@ base 2, 8, 16 to decimal
 math1_binarysolve:
 solve equation 4^x + 6^x = 9^x
 
+CSCE222:
+counting permutations and combinations;
+sorting methods
+
 ISEN302:
 engineering economics
 
