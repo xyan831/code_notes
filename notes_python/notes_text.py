@@ -1,19 +1,23 @@
 # notes_text
+# xyan831
 
 # import module
 import os
 import re
 
 # get all files from directory based on file type
-def get_all_files(directory, type=".py"):
-	# initializing empty file paths list
+def get_all_files(directory, type='.py'):
 	files = []
-	# crawling through directory
 	for file in os.listdir(directory):
-		#checks file type
 		if file.endswith(type):
 			files.append(file)
 	return files
+
+# rename file
+def rename_file(directory, oldname, newname):
+	olddir = directory+'\\'+oldname
+	newdir = directory+'\\'+newname
+	os.rename(olddir, newdir)
 
 # find text
 def find(word1, word2, txt):
@@ -30,7 +34,7 @@ def delchar(lst, txt):
 
 # test
 directory = r"C:\Users\xyan8\Documents\0_program\Python Scripts"
-files = get_all_files(directory)
+files = get_all_files(directory, '.txt')
 print(files)
 
 s = 'asdf=5;iwantthis123jasd asdf=5;iwantthis123jasd'
