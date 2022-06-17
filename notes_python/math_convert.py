@@ -35,10 +35,11 @@ def boh_convert(num, base):
 	return ans
 
 # calculate
-a1 = dec_convert(13, 2)
-a2 = dec_convert(210, 8)
-a3 = dec_convert(501, 16)
-
-a4 = boh_convert(1101, 2)
-a5 = boh_convert(322, 8)
-a6 = boh_convert('1F5', 16)
+a = []
+a.append(dec_convert(13, 2))
+a.append(dec_convert(210, 8))
+a.append(dec_convert(501, 16))
+a.append(boh_convert(1101, 2))
+a.append(boh_convert(322, 8))
+a.append(boh_convert('1F5', 16))
+print(a)
