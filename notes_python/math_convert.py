@@ -1,7 +1,7 @@
 # number conversion
 # xyan831
 
-# decimal to base 2, 8, 16
+# decimal to base 2, 8, 16 (input integer)
 def dec_convert(num, base):
 	# for numbers greater than 10
 	hexd = {'10':'A', '11':'B', '12':'C', '13':'D', '14':'E', '15':'F'}
@@ -17,7 +17,7 @@ def dec_convert(num, base):
 	print('base', base, 'number = ', ans)
 	return ans
 
-# base 2, 8, 16 to decimal
+# base 2, 8, 16 to decimal (input string)
 def boh_convert(num, base):
 	# for numbers greater than 10
 	hexd = {'10':'A', '11':'B', '12':'C', '13':'D', '14':'E', '15':'F'}
@@ -33,13 +33,3 @@ def boh_convert(num, base):
 	ans = sum(con)
 	print('decimal = ', ans)
 	return ans
-
-# calculate
-a = []
-a.append(dec_convert(13, 2))
-a.append(dec_convert(210, 8))
-a.append(dec_convert(501, 16))
-a.append(boh_convert(1101, 2))
-a.append(boh_convert(322, 8))
-a.append(boh_convert('1F5', 16))
-print(a)
