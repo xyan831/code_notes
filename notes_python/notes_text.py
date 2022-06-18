@@ -6,44 +6,41 @@ import os
 import re
 
 # get all files from directory based on file type
-def get_all_files(directory, type='.py'):
-	files = []
-	for file in os.listdir(directory):
-		if file.endswith(type):
-			files.append(file)
-	return files
+def file_typget(filetyp='.py', filedir=os.getcwd()):
+	filelst = []
+	for file in os.listdir(filedir):
+		if file.endswith(filetyp):
+			filelst.append(file)
+	return filelst
 
 # rename file
-def rename_file(directory, oldname, newname):
+def file_rename(oldname, newname, directory=os.getcwd()):
 	olddir = directory+'\\'+oldname
 	newdir = directory+'\\'+newname
 	os.rename(olddir, newdir)
 
-# find text
-def find(word1, word2, txt):
-	pat = re.compile(word1+'(.*?)'+word2, re.S)
+# find text between 2 marks [start, end]
+def find(mark, txt):
+	pat = re.compile(mark[0]+'(.*?)'+mark[1], re.S)
 	lst = pat.findall(txt)
 	return lst
 
 # delete characters
 def delchar(lst, txt):
-	line = txt
 	for item in lst:
-		line = line.replace(item, '')
-	return line
+		txt = txt.replace(item, '')
+	return txt
 
 # test
-directory = r"C:\Users\xyan8\Documents\0_program\Python Scripts"
-files = get_all_files(directory, '.txt')
-print(files)
+filelst = file_typget('.txt')
+print(filelst)
 
-s = 'asdf=5;iwantthis123jasd asdf=5;iwantthis123jasd'
-w1 = 'asdf=5;'
-w2 = '123jasd'
-ln = find(w1, w2, s)
-print(ln)
+text1 = 'asdf=5;iwantthis123jasd asdf=5;iwantthis123jasd'
+mark = ['asdf=5;', '123jasd']
+txtlst = find(mark, text1)
+print(txtlst)
 
-cd = [' ', '\n', '\t']
-text = 'yo wasupo \n \t sfdgsdfg'
-lin = delchar(cd, text)
-print(lin)
+chara = [' ', '\n', '\t']
+text2 = 'yo wasupo \n \t sfdgsdfg'
+text = delchar(chara, text2)
+print(text)
