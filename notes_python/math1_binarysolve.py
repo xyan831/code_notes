@@ -6,37 +6,34 @@ from math import sqrt, log
 
 # 4^x + 6^x = 9^x
 def check(x):
-	global result
-	lhs = (4**x) + (6**x)
+	lhs = 4**x + 6**x
 	rhs = 9**x
-	result = lhs - rhs
+	return lhs - rhs
 
 # find x
-result = 0
-a = 0
-b = 2
-c = (a+b)/2
-check(c)
+def solve(left, right):
+	mid = (left+right)/2
+	result = check(mid)
+	if abs(result) <= 0.0001:
+		return mid
+	else:
+		while abs(result) > 0.0001:
+			if result > 0:
+				left = mid
+				mid = (left+right)/2
+				result = check(mid)
+				if abs(result) <= 0.0001:
+					return mid
+			elif result < 0:
+				right = mid
+				mid = (left+right)/2
+				result = check(mid)
+				if abs(result) <= 0.0001:
+					return mid
 
-if abs(result) <= 0.0001:
-	print('x = ', c)
-else:
-	while abs(result) > 0.0001:
-		if result > 0:
-			a = c
-			c = (a+b)/2
-			check(c)
-			if abs(result) <= 0.0001:
-				print('x = ', c)
-				break
-		if result < 0:
-			b = c
-			c = (a+b)/2
-			check(c)
-			if abs(result) <= 0.0001:
-				print('x = ', c)
-				break
-
-# solution equation
-a = (-1+sqrt(5))/2
-print('x = ', log(a, 2/3))
+# calculate
+a1 = solve(0, 2)
+# solution
+a2 = (-1+sqrt(5))/2
+print('x =', a1)
+print('x =', log(a2, 2/3))
