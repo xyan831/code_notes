@@ -4,31 +4,39 @@
 # import module
 import random
 
-# pool
-SSR = ['SSR_one', 'SSR_two', 'SSR_three']
-_SR = ['SR_one', 'SR_two', 'SR_three']
-__R = ['R_one', 'R_two', 'R_three']
-__N = ['N_one', 'N_two', 'N_three']
+# class for gacha
+class Gacha:
+	def __init__(self, pool, weight):
+		self.pool = pool
+		self.weight = weight
+	# pull gacha
+	def PULL(self, num):
+		# pull from pool
+		def GET(Type, Lst):
+			print(f'{Type}：  {random.choice(Lst)}')
+		# start gacha
+		print('你抽到了：')
+		# choose pools
+		gachalst = random.choices(self.pool, weights=self.weight, k=num)
+		# pull gachas
+		for i in gachalst:
+			GET(i[0], i[1])
 
-# probablilty
-Weight = [4, 20, 50, 30]
+# pool
+SSR = ['SSR_ein', 'SSR_zwei', 'SSR_drei']
+_SR = ['SR_ein', 'SR_zwei', 'SR_drei']
+__R = ['R_ein', 'R_zwei', 'R_drei']
+__N = ['N_ein', 'N_zwei', 'N_drei']
 
 # create master list
-mlst = [['SSR', SSR],
+pool = [['SSR', SSR],
 		[' SR', _SR],
 		['  R', __R],
 		['  N', __N]]
 
-# pull from pool
-def gachaGet(Type, Lst):
-	print(f'{Type}：  {random.choice(Lst)}')
-
-# number of pulls
-def gacha(num):
-	print('你抽到了：')
-	gachalst = random.choices(mlst, weights=Weight, k=num)
-	for i in gachalst:
-		gachaGet(i[0], i[1])
+# probablilty
+weight = [4, 20, 50, 30]
 
 # pull gacha
-gacha(10)
+gacha = Gacha(pool, weight)
+gacha.PULL(10)
