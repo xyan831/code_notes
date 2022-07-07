@@ -1,6 +1,11 @@
 # number conversion
 # xyan831
 
+# decimal to base 2, 8, 16
+def base10(num10):
+	base = [bin(num10), oct(num10), hex(num10)]
+	return base
+
 # decimal to base 2, 8, 16 (input integer)
 def dec_convert(num, base):
 	# for numbers greater than 10
