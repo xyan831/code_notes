@@ -14,20 +14,20 @@ def roll(dice, face):
 		lst.append(rd.randint(1, face))
 	return lst
 
-# interpolation between 2 points
-def interpolation(xi, xlst, ylst):
-	p = (ylst[1]-ylst[0]) / (xlst[1]-xlst[0])
-	yi = ylst[0] + (xi-xlst[0])*p
+# interpolation: x=[x1, x2], y=[y1, y2]
+def interpolation(xi, x, y):
+	p = (y[1]-y[0]) / (x[1]-x[0])
+	yi = y[0] + (xi-x[0])*p
 	return yi
 
 # quadratic equation: (a)x + (b)y + (c) = 0
-def quad_eq(a, b, c):
+def quadratic(a, b, c):
 	q1 = (-b + sqrt(b**2 - 4*a*c)) / (2*a)
 	q2 = (-b - sqrt(b**2 - 4*a*c)) / (2*a)
 	return [q1, q2]
 
 # matrix solve linear equation: [a][x] = [b]
-def mat_lin(a, b):
+def matrixlinear(a, b):
 	x = np.linalg.solve(a, b)
 	return x
 
