@@ -22,13 +22,14 @@ class Gacha:
 		for i in gachalst:
 			GET(i[0], i[1])
 
+'''
 # pool
 SSR = ['SSR_ein', 'SSR_zwei', 'SSR_drei']
 _SR = ['SR_ein', 'SR_zwei', 'SR_drei']
 __R = ['R_ein', 'R_zwei', 'R_drei']
 __N = ['N_ein', 'N_zwei', 'N_drei']
 
-# create master list
+# create pool list
 pool = [['SSR', SSR],
 		[' SR', _SR],
 		['  R', __R],
@@ -40,3 +41,4 @@ weight = [4, 20, 50, 30]
 # pull gacha
 gacha = Gacha(pool, weight)
 gacha.PULL(10)
+'''
