@@ -1,4 +1,4 @@
-# math1: binary solve equation
+# binary solve equation
 # xyan831
 
 # import module
