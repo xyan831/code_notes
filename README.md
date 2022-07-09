@@ -1,37 +1,39 @@
 # c
 bstnotes(main):
-  binary search tree
+binary search tree
 
 start(main):
-  include other .cpp files
+include other .cpp files
 
 basecon:
-  decimal to base 2, 8, 16
+decimal to base 2, 8, 16
 
 arraysort:
-  maximum and minimum;
-  find multiple of number within range;
-  generate random number array;
-  sort random number array in ascending order
+maximum and minimum;
+find multiple of number within range;
+generate random number array;
+sort random number array in ascending order
 
 binarytree:
-  binary search tree without main
+binary search tree without main
 
 # python
 gacha:
-  random pull from different weighted lists
+random pull from different weighted lists
 
 notes_math:
-  roll dice;
-  interpolation;
-  quadratic equation;
-  solve linear equation by matrix;
-  phasor euler's formula
-  vector class:
-    vector magnitude;
-    unit vector;
-    dot and cross product
-  number list class:
+roll dice;
+interpolation;
+quadratic equation;
+solve linear equation by matrix;
+phasor euler's formula
+
+vector class:
+  vector magnitude;
+  unit vector;
+  dot and cross product
+
+number list class:
     max and min;
     average and standard deviation;
     normalization between 2 numbers
