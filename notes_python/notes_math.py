@@ -4,7 +4,7 @@
 # import module
 import numpy as np
 import random as rd
-from math import sqrt, radians, sin, cos
+from math import sqrt, radians, sin, cos, factorial
 from operator import mul
 
 # roll dices
@@ -82,3 +82,19 @@ class NumList:
 			new = (i-self.min)/(self.max-self.min)
 			norm.append((b-a)*new + a)
 		return norm
+
+# counting permutations and combinations
+# order (n) elements into (r) permutations/combinations
+class Count:
+	def __init__(self, n, r):
+		self.n = n
+		self.r = r
+		# permutation: P(n, r) = n! / [(n-r)!]
+		self.P = factorial(n) / factorial(n-r)
+		# permutation with repetition: PR(n, r) = n^r
+		self.PR = n**r
+		# combination: C(n, r) = n! / [r! * (n-r)!]
+		self.C = factorial(n) / (factorial(r)*factorial(n-r))
+		# combination with repetition
+		# CR(n, r) = C(n-1+r, r) = (n-1+r)! / [r! * (n-1)!]
+		self.CR = factorial(n-1+r) / (factorial(r)*factorial(n-1))
