@@ -7,19 +7,20 @@ import re
 
 # class for files
 class File:
-	# get all files from directory based on file type
-	def TYPE(filetyp='.py', filedir=os.getcwd()):
+	# get files from directory based on file type
+	def TYPE(typlst=['.py'], filedir=os.getcwd()):
 		filelst = []
 		for file in os.listdir(filedir):
-			if file.endswith(filetyp):
-				filelst.append(file)
+			for typ in typlst:
+				if file.endswith(typ):
+					filelst.append(file)
 		return filelst
-	# rename file
+	# rename file in same directory
 	def RENAME(oldname, newname, directory=os.getcwd()):
 		olddir = directory+'\\'+oldname
 		newdir = directory+'\\'+newname
 		os.rename(olddir, newdir)
-	# remove file
+	# remove files from same directory
 	def REMOVE(lst, filedir=os.getcwd()):
 		for i in lst:
 			os.remove(filedir+'\\'+i)
