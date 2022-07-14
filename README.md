@@ -45,12 +45,11 @@ counting class:
 
 [notes_text]
 
-file class:
+functions:
   get files based on file type;
   rename files in same folder;
-  remove multiple files in same folder
-
-text class:
+  remove multiple files in same folder;
+  clean out folder;
   find text between 2 strings;
   delete multiple strings from text
 
