@@ -83,12 +83,11 @@ class NumList:
 			norm.append((b-a)*new + a)
 		return norm
 
-# counting permutations and combinations
-# order (n) elements into (r) permutations/combinations
+# class for counting
 class Count:
 	def __init__(self, n, r):
-		self.n = n
-		self.r = r
+		self.n = n # elements
+		self.r = r # permutations/combinations
 		# permutation: P(n, r) = n! / [(n-r)!]
 		self.P = factorial(n) / factorial(n-r)
 		# permutation with repetition: PR(n, r) = n^r
