@@ -2,7 +2,6 @@
 # xyan831
 
 # import module
-from math import ceil
 from notes_math import roll
 
 # coc character creation
@@ -24,8 +23,8 @@ class COC:
 		self.edu = 5*(sum(roll(2,6))+6)			# education
 		self.luck = 5*(sum(roll(2,6))+6)		# luck
 		
-		self.hp = ceil((self.siz+self.con)/10)	# hit point
-		self.mp = ceil(self.pow/5)				# magic point
+		self.hp = int((self.siz+self.con)/10)	# hit point
+		self.mp = int(self.pow/5)				# magic point
 		self.san = self.pow						# sanity
 		self.move = self.getMove()				# move rate
 	# get move rate
