@@ -18,11 +18,11 @@
   binary search tree without main
 
 # python
-[coc]
-  roll stats for coc character
-
-[gacha]
+[blk1_gacha]
   random pull from different weighted lists
+
+[blk2_trpg]
+  roll stats for coc character
 
 [notes_math]
 
