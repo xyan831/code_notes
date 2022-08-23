@@ -18,6 +18,9 @@
   binary search tree without main
 
 # python
+[coc]
+  roll stats for coc character
+
 [gacha]
   random pull from different weighted lists
 
