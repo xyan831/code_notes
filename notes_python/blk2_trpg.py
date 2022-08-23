@@ -1,4 +1,4 @@
-# coc
+# trpg
 # xyan831
 
 # import module
@@ -11,6 +11,7 @@ def roll(dice, face):
 		lst.append(rd.randint(1, face))
 	return sum(lst)
 
+# roll success rate
 def rollOK(rate, level=1):
 	num = rd.randint(1, 100)
 	if (level==1):
