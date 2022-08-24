@@ -23,9 +23,9 @@ def rollOK(rate, level=1):
 		name = "极难"
 		rate = int(rate/5)
 	ok = "成功" if (num<=rate) else "失败"
-	if (rate<=5):
+	if (num<=5):
 		ok = "大成功"
-	if (rate>=96):
+	if (num>=96):
 		ok = "大失败"	
 	print(f"{name}:\t{num} / {rate}\t\t{ok}")
 
