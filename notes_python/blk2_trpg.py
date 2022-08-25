@@ -12,22 +12,21 @@ def roll(dice, face):
 	return sum(lst)
 
 # roll success rate
-def rollOK(rate, level=1):
+def rollOK(rate):
 	num = rd.randint(1, 100)
-	if (level==1):
-		name = "普通"
-	elif (level==2):
-		name = "困难"
-		rate = int(rate/2)
-	elif (level==3):
-		name = "极难"
-		rate = int(rate/5)
-	ok = "成功" if (num<=rate) else "失败"
 	if (num<=5):
 		ok = "大成功"
-	if (num>=96):
-		ok = "大失败"	
-	print(f"{name}:\t{num} / {rate}\t\t{ok}")
+	elif (num<=int(rate/5)):
+		ok = "极难成功"
+	elif (num<=int(rate/2)):
+		ok = "困难成功"
+	elif (num<=rate):
+		ok = "成功"	
+	elif (num>=96):
+		ok = "大失败"
+	else:
+		ok = "失败"
+	print(f"1d100={num}/{rate} ({ok})")
 
 # roll coc character stat
 class rollCOC:
