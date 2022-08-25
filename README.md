@@ -22,6 +22,8 @@
   random pull from different weighted lists
 
 [blk2_trpg]
+  roll dice;
+  roll for success rate;
   roll stats for coc character
 
 [notes_math]
