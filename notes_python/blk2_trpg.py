@@ -29,13 +29,10 @@ def rollOK(rate, level=1):
 		ok = "大失败"	
 	print(f"{name}:\t{num} / {rate}\t\t{ok}")
 
-# coc character creation
-class COC:
+# roll coc character stat
+class rollCOC:
 	# initialize char
-	def __init__(self, pc, pl):
-		self.pc = pc							# character
-		self.pl = pl							# player
-		
+	def __init__(self):
 		self.str = 5*roll(3,6)					# strength
 		self.con = 5*roll(3,6)					# constitution
 		self.siz = 5*(roll(2,6)+6)				# size
@@ -61,8 +58,8 @@ class COC:
 		else:
 			return 8
 	# print stat
-	def PC(self):
-		print(f"PC: {self.pc}\t\tPL: {self.pl}\n")
+	def printStat(self):
+		print("COC角色随机属性\n")
 		print(f"生命: {self.hp}\t\t魔法: {self.mp}")
 		print(f"理智: {self.san}\t\t移动: {self.move}\n")
 		print(f"力量: {self.str}\t\t敏捷: {self.dex}\t\t意志: {self.pow}")
