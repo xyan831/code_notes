@@ -2,8 +2,8 @@
 # xyan831
 
 # import module
-import numpy as np
-import random as rd
+from numpy.linalg import solve
+from random import randint
 from math import sqrt, radians, sin, cos, factorial
 from operator import mul
 
@@ -11,7 +11,7 @@ from operator import mul
 def roll(dice, face):
 	lst = []
 	for i in range(dice):
-		lst.append(rd.randint(1, face))
+		lst.append(randint(1, face))
 	return lst
 
 # interpolation: x=[x1, x2], y=[y1, y2]
@@ -28,14 +28,12 @@ def quadratic(a, b, c):
 
 # matrix solve linear equation: [a][x] = [b]
 def matrixlinear(a, b):
-	x = np.linalg.solve(a, b)
-	return x
+	return solve(a, b)
 
-# phasor: euler's formula e^(i*theta) = cos(theta) + i*sin(theta)
+# phasor: euler's formula e^(i*t) = cos(t) + i*sin(t)
 def phasor(a, t):
-	th = radians(t)
-	r = a*cos(th)
-	i = a*sin(th)
+	r = a*cos(radians(t))
+	i = a*sin(radians(t))
 	return [r, i]
 
 # class for vector [x, y, z]
