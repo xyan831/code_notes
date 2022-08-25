@@ -29,38 +29,32 @@ def rollOK(rate):
 	print(f"1d100={num}/{rate} ({ok})")
 
 # roll coc character stat
-class rollCOC:
-	# initialize char
-	def __init__(self):
-		self.str = 5*roll(3,6)					# strength
-		self.con = 5*roll(3,6)					# constitution
-		self.siz = 5*(roll(2,6)+6)				# size
-		
-		self.dex = 5*roll(3,6)					# dexterity
-		self.app = 5*roll(3,6)					# appearance
-		self.int = 5*(roll(2,6)+6)				# intelligence
-		
-		self.pow = 5*roll(3,6)				 	# power
-		self.edu = 5*(roll(2,6)+6)				# education
-		self.luck = 5*(roll(2,6)+6)				# luck
-		
-		self.hp = int((self.siz+self.con)/10)	# hit point
-		self.mp = int(self.pow/5)				# magic point
-		self.san = self.pow						# sanity
-		self.move = self.getMove()				# move rate
-	# get move rate
-	def getMove(self):
-		if (self.dex<self.siz)and(self.str<self.siz):
-			return 7
-		elif (self.dex>self.siz)and(self.str>self.siz):
-			return 9
-		else:
-			return 8
+def rollCOC():
+	# roll stat
+	STR = 5*roll(3,6)			# strength
+	CON = 5*roll(3,6)			# constitution
+	SIZ = 5*(roll(2,6)+6)		# size
+	DEX = 5*roll(3,6)			# dexterity
+	APP = 5*roll(3,6)			# appearance
+	INT = 5*(roll(2,6)+6)		# intelligence
+	POW = 5*roll(3,6)		 	# power
+	EDU = 5*(roll(2,6)+6)		# education
+	LUCK = 5*(roll(2,6)+6)		# luck
+	# calculate stat
+	HP = int((SIZ+CON)/10)		# hit point
+	MP = int(POW/5)				# magic point
+	SAN = POW					# sanity
+	# move rate
+	if (DEX<SIZ)and(STR<SIZ):
+		MOVE = 7
+	elif (DEX>SIZ)and(STR>SIZ):
+		MOVE = 9
+	else:
+		MOVE = 8
 	# print stat
-	def printStat(self):
-		print("COC角色随机属性\n")
-		print(f"生命: {self.hp}\t\t魔法: {self.mp}")
-		print(f"理智: {self.san}\t\t移动: {self.move}\n")
-		print(f"力量: {self.str}\t\t敏捷: {self.dex}\t\t意志: {self.pow}")
-		print(f"体质: {self.con}\t\t外貌: {self.app}\t\t教育: {self.edu}")
-		print(f"体型: {self.siz}\t\t智力: {self.int}\t\t幸运: {self.luck}")
+	print("COC角色随机属性\n")
+	print(f"生命: {HP}\t\t魔法: {MP}")
+	print(f"理智: {SAN}\t\t移动: {MOVE}\n")
+	print(f"力量: {STR}\t\t敏捷: {DEX}\t\t意志: {POW}")
+	print(f"体质: {CON}\t\t外貌: {APP}\t\t教育: {EDU}")
+	print(f"体型: {SIZ}\t\t智力: {INT}\t\t幸运: {LUCK}")
