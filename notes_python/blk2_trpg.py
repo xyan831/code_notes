@@ -2,18 +2,18 @@
 # xyan831
 
 # import module
-import random as rd
+from random import randint
 
 # roll dices
 def roll(dice, face):
 	lst = []
 	for i in range(dice):
-		lst.append(rd.randint(1, face))
+		lst.append(randint(1, face))
 	return sum(lst)
 
 # roll success rate
 def rollOK(rate):
-	num = rd.randint(1, 100)
+	num = randint(1, 100)
 	if (num<=5):
 		ok = "大成功"
 	elif (num<=int(rate/5)):
