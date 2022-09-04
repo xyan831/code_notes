@@ -52,9 +52,10 @@ def rollCOC():
 	else:
 		MOVE = 8
 	# print stat
-	print("COC角色随机属性\n")
+	print("COC7版规则 随机角色属性\n")
 	print(f"生命: {HP}\t\t魔法: {MP}")
 	print(f"理智: {SAN}\t\t移动: {MOVE}\n")
 	print(f"力量: {STR}\t\t敏捷: {DEX}\t\t意志: {POW}")
 	print(f"体质: {CON}\t\t外貌: {APP}\t\t教育: {EDU}")
-	print(f"体型: {SIZ}\t\t智力: {INT}\t\t幸运: {LUCK}")
+	print(f"体型: {SIZ}\t\t智力: {INT}\t\t幸运: {LUCK}\n")
+	print(f"总点数: {STR+CON+SIZ+DEX+APP+INT+POW+EDU}")
